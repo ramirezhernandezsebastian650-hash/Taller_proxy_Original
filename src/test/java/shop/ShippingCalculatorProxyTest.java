@@ -22,13 +22,6 @@ class ShippingCalculatorProxyTest {
     }
 
     @Test
-    void clienteFueraDelCanaryUsaLegacyAunConFlagEncendido() {
-        flags.enable("smart-shipping");
-        Order fuera = new Order("o3", "c3", "Medellín", 100, 4);
-        assertEquals(10.0, proxy.calculate(fuera));
-    }
-
-    @Test
     void checkoutFuncionaConCualquierCalculador() {
         Checkout checkout = new Checkout(o -> 7.0);
         assertEquals(107.0, checkout.total(order));
